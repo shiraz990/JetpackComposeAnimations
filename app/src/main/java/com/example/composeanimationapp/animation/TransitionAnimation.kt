@@ -27,8 +27,8 @@ enum class FabSizeState {
 @Composable
 fun ExplodingFabButton() {
     var fabSizeState by remember { mutableStateOf(FabSizeState.NORMAL) }
-    val secondaryColor = MaterialTheme.colors.secondary
-    val primaryColor = MaterialTheme.colors.primary
+    val secondaryColor = MaterialTheme.colors.primary
+    val primaryColor = MaterialTheme.colors.secondaryVariant
 
 
     val fabTransition: Transition<FabSizeState> = updateTransition(fabSizeState)

@@ -96,9 +96,9 @@ fun PortraitModeImage() {
             .sizeIn(maxWidth = 300.dp, maxHeight = 300.dp)
             .background(if (portraitMode) Color(0xFFfffbd0) else Color(0xFFe3ffd9))
             .animateContentSize(
-                animationSpec = tween(500, easing = LinearEasing),
+                animationSpec = tween(500, easing = LinearOutSlowInEasing),
                 finishedListener = { startSize, endSize ->
-                    Log.d("droidcon", "$startSize -> $endSize")
+                    Log.d("compose animation", "$startSize -> $endSize")
                 }
             )
             .aspectRatio(if (portraitMode) 3 / 4f else 16 / 9f)

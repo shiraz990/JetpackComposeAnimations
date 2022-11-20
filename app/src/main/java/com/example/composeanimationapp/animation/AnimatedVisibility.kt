@@ -41,11 +41,13 @@ fun AnimatedVisibilty() {
             AnimatedVisibility(
                 expanded,
                 modifier = Modifier.align(Alignment.CenterVertically),
-                enter = fadeIn(
-                    animationSpec = tween(durationMillis = 1000)
+                enter = slideInHorizontally(
+                    initialOffsetX = { 300 },
+                    animationSpec = tween(durationMillis = 2000)
                 ),
-                exit = fadeOut(
-                    animationSpec = tween(durationMillis = 1000)
+                exit = slideOutVertically(
+                    targetOffsetY = { 100 },
+                    animationSpec = tween(durationMillis = 2000)
                 )
             ) {
                 Text(modifier = Modifier.padding(start = 8.dp), text = "Like")

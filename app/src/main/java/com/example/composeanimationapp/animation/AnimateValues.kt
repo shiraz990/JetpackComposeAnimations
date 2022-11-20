@@ -55,6 +55,7 @@ fun MovingSquare() {
         animPosX.animateTo(
             targetValue = 500f,
             animationSpec = infiniteRepeatable(
+
                 animation = tween(durationMillis = 1000)
             )
         )

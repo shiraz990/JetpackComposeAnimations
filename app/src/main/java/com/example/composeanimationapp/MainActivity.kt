@@ -67,6 +67,8 @@ class MainActivity : ComponentActivity() {
 
                                     HeadingText(text = "Transitions")
                                     RayWenderlichFavButton()
+                                    Spacer(modifier = Modifier.height(40.dp))
+
                                     FlipView(flipDurationMs = 1000,
                                         front = {
                                             Image(
