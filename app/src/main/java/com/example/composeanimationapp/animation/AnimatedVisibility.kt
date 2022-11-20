@@ -1,6 +1,7 @@
 package com.example.composeanimationapp.animation
 
 import androidx.compose.animation.*
+import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -40,13 +41,11 @@ fun AnimatedVisibilty() {
             AnimatedVisibility(
                 expanded,
                 modifier = Modifier.align(Alignment.CenterVertically),
-                enter = slideInHorizontally(
-                    initialOffsetX = { 300 },
-                    animationSpec = tween(durationMillis = 2000)
+                enter = fadeIn(
+                    animationSpec = tween(durationMillis = 1000)
                 ),
-                exit = slideOutVertically(
-                    targetOffsetY = { 100 },
-                    animationSpec = tween(durationMillis = 2000)
+                exit = fadeOut(
+                    animationSpec = tween(durationMillis = 1000)
                 )
             ) {
                 Text(modifier = Modifier.padding(start = 8.dp), text = "Like")
@@ -115,7 +114,7 @@ fun BottomMenuButton(modifier: Modifier = Modifier, selected: Boolean, bgColor: 
                     style = TextStyle(
                         color = textColor,
                         fontWeight = FontWeight.Bold,
-                        fontSize = 15.sp
+                        fontSize = 12.sp
                     )
                 )
             }
